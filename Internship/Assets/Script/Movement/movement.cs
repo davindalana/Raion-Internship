@@ -30,7 +30,7 @@ public class movement : MonoBehaviour
         float mX = Input.GetAxisRaw("Horizontal");
         float mY = Input.GetAxisRaw("Vertical");
         moveDirection = new Vector2(mX, mY).normalized;
-        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        if (Input.GetKeyDown(KeyCode.Space) && canDash)
         {
             StartCoroutine(Dash());
         }
@@ -55,5 +55,4 @@ public class movement : MonoBehaviour
         yield return new WaitForSeconds(dashCd);
         canDash = true;
     }
-
 }
