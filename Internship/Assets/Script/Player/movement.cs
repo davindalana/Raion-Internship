@@ -16,9 +16,12 @@ public class movement : MonoBehaviour
     public bool isDash;
     public bool canDash;
 
+    
+
     void Start()
     {
         canDash = true;
+
     }
 
     void Update()
@@ -49,7 +52,6 @@ public class movement : MonoBehaviour
     {
         canDash = false;
         isDash = true;
-        
         rb.velocity = new Vector2(moveDirection.x * dashSpeed, moveDirection.y * dashSpeed);
         yield return new WaitForSeconds(dashDuration);
 

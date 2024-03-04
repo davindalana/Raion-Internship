@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class wallInteractionNo : MonoBehaviour
+public class Wall : MonoBehaviour
 {
-    private bool canDashThrough = false;
     // Start is called before the first frame update
     void Start()
     {
