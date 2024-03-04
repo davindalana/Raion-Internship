@@ -9,12 +9,12 @@ public class movement : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float speed;
-    Vector2 moveDirection;
+    public Vector2 moveDirection;
     public float dashSpeed;
     public float dashDuration;
     public float dashCd;
-    bool isDash;
-    bool canDash;
+    public bool isDash;
+    public bool canDash;
 
     void Start()
     {
@@ -49,8 +49,10 @@ public class movement : MonoBehaviour
     {
         canDash = false;
         isDash = true;
+        
         rb.velocity = new Vector2(moveDirection.x * dashSpeed, moveDirection.y * dashSpeed);
-        yield return new WaitForSeconds(dashDuration); 
+        yield return new WaitForSeconds(dashDuration);
+
         isDash = false;
         yield return new WaitForSeconds(dashCd);
         canDash = true;
